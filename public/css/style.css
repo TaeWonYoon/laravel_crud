@@ -1,0 +1,151 @@
+/* 기본 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Flex 레이아웃: 푸터를 항상 하단에 고정 */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* 공통 컨테이너 */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 헤더 스타일 */
+header.top {
+    background-color: #007BFF;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header.top h1 {
+    margin-bottom: 0.5rem;
+}
+
+header.top nav a {
+    margin-right: 1rem;
+    color: white;
+    font-weight: bold;
+}
+
+/* 메인 콘텐츠 (푸터 밀어내기용) */
+main.content {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+/* 푸터 스타일 */
+footer.footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+
+/* 회원가입 폼 시작!! */
+main.content {
+    flex: 1;
+    padding: 2rem 0;
+
+    display: flex;           /* 플렉스 컨테이너 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center;     /* 세로 중앙 정렬 */
+    min-height: 70vh;        /* 최소 높이 조절 (필요에 따라 조절 가능) */
+}
+
+
+/* 회원가입 폼 전체 스타일 */
+.signup-form {
+    max-width: 400px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* 제목 스타일 */
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* 라벨과 인풋 기본 */
+
+.signup-form label {
+    /* display: block; */
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* 중복확인 버튼 포함된 이메일 인풋 라인 */
+.input-with-button {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.input-with-button input {
+    flex: 1;
+}
+
+.input-with-button .check-btn {
+    padding: 0.5rem 1rem;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.input-with-button .check-btn:hover {
+    background-color: #5a6268;
+}
+
+/* 가입 버튼 */
+.signup-form #loginSubmit {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-form #loginSubmit:hover {
+    background-color: #0056b3;
+}

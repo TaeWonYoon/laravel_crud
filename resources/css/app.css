@@ -1,0 +1,6 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* 필요하다면 아래에 사용자 정의 CSS 추가 */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
