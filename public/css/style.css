@@ -149,3 +149,15 @@ main.content {
 .signup-form #loginSubmit:hover {
     background-color: #0056b3;
 }
+
+.pagination li a, .pagination li span {
+    font-size: 14px; /* 적당한 크기 */
+}
+
+.pagination li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+
+

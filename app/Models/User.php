@@ -14,7 +14,7 @@ class User extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
-     *
+     * create ,update 컬럼 / 셀렉트는 전부
      * @var array<int, string>
      */
     protected $fillable = [

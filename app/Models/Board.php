@@ -12,7 +12,13 @@ class Board extends Model
 
     protected $fillable = [
         'subject',
-        'contents'
+        'contents',
+        'insert_id'
     ];
+
+
+    public function files() {
+        return $this->hasMany(File::class, 'table_id')->where('table_name', 'board');
+    }
     
 }

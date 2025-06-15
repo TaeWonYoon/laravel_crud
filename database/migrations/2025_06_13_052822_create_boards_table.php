@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('subject');
             $table->text('contents');
+            $table->string('delete_at',1);
             $table->timestamps();
         });
     }

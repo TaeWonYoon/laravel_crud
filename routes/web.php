@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BoardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 Route::resource('users', UserController::class);
 Route::resource('boards', BoardController::class);
+Route::resource('files', FileController::class);
 
 
 //중복확인 메소드
@@ -29,3 +31,5 @@ Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 
+// 파일 삭제 별도 선언 (resource 에서 destroy 포함되어 있지만, 명확히 쓰는 것도 OK)
+Route::delete('/files/{file}', [FileController::class, 'destroy'])->name('files.destroy');

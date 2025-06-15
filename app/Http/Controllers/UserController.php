@@ -97,8 +97,12 @@ class UserController extends Controller
             //인증 성공 → 세션에 사용자 정보 저장
             $request->session()->regenerate(); // 세션 보안 토큰 재발급
 
+            $user = User::where('user_id', $request->user_id)->first();
+
+            Log::info($user);
             //세션에 원하는 정보 저장
-            $request->session()->put('user', $request->user_id);
+            $request->session()->put('user', $user->user_id);
+            $request->session()->put('name', $user->name);
 
             //리다이렉트
             return redirect('/')->with('status', '로그인 성공!');

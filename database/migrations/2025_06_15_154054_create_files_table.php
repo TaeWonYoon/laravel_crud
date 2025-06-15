@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id', 20);
-            $table->string('name', 4);
-            $table->string('password', 12);
-            $table->string('alias', 10);
-            $table->string('email', 20);
-            $table->string('buseo',4);
-            $table->integer('level');
+            $table->string('table_name');
+            $table->string('table_id');
+            $table->string('file_name');
+            $table->string('file_name_origin');
+            $table->string('file_ext');
+            $table->string('file_size');
+            $table->string('file_path');
+            $table->string('user_id');
             $table->string('delete_at',1);
             $table->timestamps();
         });
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('files');
     }
 };
