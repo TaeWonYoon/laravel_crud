@@ -27,17 +27,17 @@
     &nbsp; 3. 로그인 <br>
     <img src="./img/3.login.png" width="800" height="350" /> <br>
     &nbsp; 4. 게시판 목록 <br>
-    <img src="./img/4.board_list" width="800" height="350" /> <br>
+    <img src="./img/4.board_list.png" width="800" height="350" /> <br>
     &nbsp; 5. 게시판 등록 <br>
-    <img src="./img/5.board_create" width="800" height="350" /> <br>
+    <img src="./img/5.board_create.png" width="800" height="350" /> <br>
     &nbsp; 6. 게시판 상세조회 <br>
-    <img src="./img/6.board_detail" width="800" height="350" /> <br>
+    <img src="./img/6.board_detail.png" width="800" height="350" /> <br>
     &nbsp; 7. 게시판 수정 <br>
-    <img src="./img/7.board_edit" width="800" height="350" /> <br>
+    <img src="./img/7.board_edit.png" width="800" height="350" /> <br>
     &nbsp; 8. 회원정보 목록 <br>
-    <img src="./img/8.user_list" width="800" height="350" /> <br>
+    <img src="./img/8.user_list.png" width="800" height="350" /> <br>
     &nbsp; 9. 회원정보 수정 <br>
-    <img src="./img/9.user_edit" width="800" height="350" /> <br>
+    <img src="./img/9.user_edit.png" width="800" height="350" /> <br>
 </p>
     
     
