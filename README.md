@@ -19,7 +19,6 @@
     &nbsp;&nbsp;2.3 게시글 수정(게시글 수정 및, 파일업로드 및 삭제) <br>
 </p>
     <h3>스크린샷</h3>
-    <span>&nbsp; 0. 메인페이지</span>
     
     <img src="./img/1.main.png" width="250" height="250" />
     
