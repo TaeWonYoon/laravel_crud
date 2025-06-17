@@ -2,10 +2,14 @@
 <p>게시판 및 회원가입</p>
 <p> 
     기능 설명 <br>
+    &nbsp; 0. 메인페이지 <br>
     &nbsp; 1. 회원가입 <br>
     &nbsp; 2. 게시판 <br>
     &nbsp; 3. 관리자 <br>
     기능 세부 설명 <br>
+    0. 메인페이지<br>
+    &nbsp; 
+    (img/1.main.png)
     &nbsp; 1. 회원 <br>
     &nbsp;&nbsp;1.1 로그인과 로그인에 대한 로그 생성 <br>
     &nbsp;&nbsp;1.2 사용자와 관리자 구분 설정 <br>
