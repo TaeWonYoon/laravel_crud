@@ -18,7 +18,6 @@
     &nbsp;&nbsp;2.2 상세조회(게시글 조회 및 파일다운로드) <br>
     &nbsp;&nbsp;2.3 게시글 수정(게시글 수정 및, 파일업로드 및 삭제) <br>
 </p>
-    <h3>스크린샷</h3>
     
     <img src="./img/1.main.png" width="250" height="250" />
     
