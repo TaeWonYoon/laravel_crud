@@ -7,9 +7,7 @@
     &nbsp; 2. 게시판 <br>
     &nbsp; 3. 관리자 <br>
     기능 세부 설명 <br>
-    0. 메인페이지<br>
-    &nbsp; 
-    <img src="./img/1.main.png" />
+    &npsp;0. 메인페이지<br>
     &nbsp; 1. 회원 <br>
     &nbsp;&nbsp;1.1 로그인과 로그인에 대한 로그 생성 <br>
     &nbsp;&nbsp;1.2 사용자와 관리자 구분 설정 <br>
@@ -19,4 +17,11 @@
     &nbsp;&nbsp;2.1 글쓰기 (게시글 작성 및 파일업로드) <br>
     &nbsp;&nbsp;2.2 상세조회(게시글 조회 및 파일다운로드) <br>
     &nbsp;&nbsp;2.3 게시글 수정(게시글 수정 및, 파일업로드 및 삭제) <br>
+
+    <h3>스크린샷</h3>
+    &nbsp; 0. 메인페이지
+    
+    <img src="./img/1.main.png" width="250" height="250" />
+    
+    
 </p>
