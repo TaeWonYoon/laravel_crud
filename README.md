@@ -22,10 +22,10 @@
     작업 캡처 파일 <br>
     &nbsp; 1. 메인페이지 <br>
     <img src="./img/1.main.png" width="800" height="350" /> <br>
-    &nbsp; 2. 회원가입 <br?>
+    &nbsp; 2. 회원가입 <br>
     <img src="./img/2.register.png" width="800" height="350" /> <br>
     &nbsp; 3. 로그인 <br>
-    <img src="./img/3.login" width="800" height="350" /> <br>
+    <img src="./img/3.login.png" width="800" height="350" /> <br>
     &nbsp; 4. 게시판 목록 <br>
     <img src="./img/4.board_list" width="800" height="350" /> <br>
     &nbsp; 5. 게시판 등록 <br>
