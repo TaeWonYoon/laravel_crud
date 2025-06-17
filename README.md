@@ -17,7 +17,9 @@
     &nbsp;&nbsp;2.1 글쓰기 (게시글 작성 및 파일업로드) <br>
     &nbsp;&nbsp;2.2 상세조회(게시글 조회 및 파일다운로드) <br>
     &nbsp;&nbsp;2.3 게시글 수정(게시글 수정 및, 파일업로드 및 삭제) <br>
-    <img src="./img/1.main.png" width="250" height="250" />
+</p>
+<p>
+    <img src="./img/1.main.png" width="350" height="350" />
 </p>
     
     
