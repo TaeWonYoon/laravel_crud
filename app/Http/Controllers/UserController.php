@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use App\Helpers\LogHelper;
 
 class UserController extends Controller
 {
@@ -80,7 +81,7 @@ class UserController extends Controller
         $userId = $request->input('user_id');
         Log::info("🔍 checkUserId 호출됨: user_id = {$userId}");
 
-        $exists = User::where('user_id', $userId)->exists();
+        $exists = User::where('user_id', $userId)->exists(); //true, false 반환
 
         return response()->json(['exists' => $exists]);
     }
@@ -103,7 +104,9 @@ class UserController extends Controller
             //세션에 원하는 정보 저장
             $request->session()->put('user', $user->user_id);
             $request->session()->put('name', $user->name);
+            $request->session()->put('level', $user->level);
 
+            LogHelper::storeLoginLog($request); // 로그인 로그 기록
             //리다이렉트
             return redirect('/')->with('status', '로그인 성공!');
         }

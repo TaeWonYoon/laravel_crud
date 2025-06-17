@@ -12,7 +12,19 @@
         </a>
         @endif
     </div>
-
+    <div class="d-flex justify-content-between align-items-center mb-3" style="float:right;">
+        <form method="GET" action="{{ route('boards.index') }}" class="mb-3 d-flex gap-2 align-items-center">
+            <select name="search" id="" class="form-control w-auto">
+                <option value="00" {{ request('search') == '' || request('search') == '00' ? 'selected' : '' }}>전체</option>
+                <option value="01" {{ request('search') == '01' ? 'selected' : '' }}>제목</option>
+                <option value="10" {{ request('search') == '10' ? 'selected' : '' }}>작성자</option>
+                <option value="11" {{ request('search') == '11' ? 'selected' : '' }}>작성일</option>
+            </select>
+            <input type="text" name="keyword" class="form-control w-auto" placeholder="검색" value="{{ request('keyword') }}">
+            <button type="submit" class="btn btn-outline-secondary">검색</button>
+            <a href="{{ route('boards.index') }}" class="btn btn-outline-danger">초기화</a>
+        </form>
+    </div>
     <table class="table table-bordered">
         <colgroup>
             <col style="width: 10%;">
@@ -35,19 +47,6 @@
             <th style="text-align:right;">{{ $ls -> insert_id }}</th>
             <th style="text-align:right;">{{ $ls->created_at->format('Y-m-d') }}</th>
             <th style="text-align:right;">{{ $ls -> views }}</th>
-            <!--
-            <th>
-                <a href="{{ route('boards.show', $ls -> id) }}">보기</a>
-                <a href="{{ route('boards.edit', $ls -> id) }}">수정</a>
-                <form action="{{ route('boards.destroy', $ls -> id) }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit">
-                        삭제
-                    </button>
-                </form>
-            </th>
-            -->
         </tr>
         @empty
         <tr>
@@ -56,19 +55,9 @@
         @endforelse
     </table>
 {{-- 페이지네이션 링크 --}}
-<div class="custom-pagination">
-    @if ($lists->onFirstPage())
-        <span>이전</span>
-    @else
-        <a href="{{ $lists->previousPageUrl() }}">이전</a>
-    @endif
-    <span>{{ $lists->currentPage() }} / {{ $lists->lastPage() }}</span>
-    @if ($lists->hasMorePages())
-        <a href="{{ $lists->nextPageUrl() }}">다음</a>
-    @else
-        <span>다음</span>
-    @endif
-</div>
+<nav style="display: flex; justify-content: center;">
+    {{ $lists->appends(request()->query())->links('pagination::bootstrap-4') }}
+</nav>
 
 
 @endsection

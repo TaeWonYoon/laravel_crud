@@ -95,7 +95,7 @@
 </style>
 
 <div class="container mt-5">
-    <h2 id="boardTitle">📝 게시글 작성</h2>
+    <h2 id="boardTitle">📝 게시글 조회</h2>
     
 
 <form action="{{ route('boards.store') }}" method="POST" enctype="multipart/form-data" class="board-form">
@@ -128,6 +128,9 @@
 
 </div>
 <script>
+    @if (session('alert'))
+        alert("{{ session('alert') }}");
+    @endif
     $("#listAct").click(function() {
         location.href = "/boards"
     })

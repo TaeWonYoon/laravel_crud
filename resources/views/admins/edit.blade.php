@@ -1,7 +1,6 @@
 @extends('layouts.layout')
 @section('content')
 
-
 <style>
 .board-form {
     max-width: 600px;
@@ -97,38 +96,33 @@
 <div class="container mt-5">
     <h2 id="boardTitle">📝 게시글 수정</h2>
     
-<form action="{{ route('boards.update', $board->id) }}" method="POST" enctype="multipart/form-data" class="board-form">
+<form action="{{ route('admins.update', $user->id) }}" method="POST" enctype="multipart/form-data" class="board-form">
     @csrf
     @method('PUT')
     <div class="form-group">
-        <label for="subject">제목</label>
-        <input type="text" id="subject" name="subject" value="{{ $board -> subject }}" required>
+        <label for="subject">아이디</label>
+        {{ $user -> user_id }}
     </div>
 
     <div class="form-group">
-        <label for="contents">내용</label>
-        <textarea id="contents" name="contents" rows="6" required>{{ $board ->contents }}</textarea>
+        <label for="contents">이름</label>
+        <input type="text" id="" name="name" rows="6" value="{{ $user ->name }}" required>
     </div>
 
     <div class="form-group">
-        <label for="file">파일 업로드</label>
-        <input type="file" id="file" name="upload_file" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.txt">
-        <br/><br/>
-        @foreach ($board->files as $file)
-        <img src="{{ Storage::url($file->file_path) }}" width="300" height="250" alt="파일 이미지" class="file-view">
-        <br/>
-        <span class="file-view">
-            {{ $file->file_name }} ({{ number_format($file->file_size / 1024, 2) }} KB)
-        </span>
-        <span style="color:red; font-weight:bold;" class="file-view" onclick="imgDelete({{ $file->id }})">
-            [삭제]
-        </span> 
-        <input type="hidden" name="file_after_id" id="fileAfterId" value="{{ $file->id }}" />
-        @endforeach
+        <label for="subject">권한</label>
+        <select name="level" id="" class="form-control w-auto">
+            <option value="1" {{ $user -> level == '1' ? 'selected' : '' }}>사용자</option>
+            <option value="9" {{ $user -> level == '9' ? 'selected' : '' }}>관리자</option>
+        </select>
     </div>
-    <button type="submit" class="btn-submit">작성 완료</button>
-    <br/>
-    <button type="button" class="btn-list" onclick="showAct({{ $board ->id }})">취소</button>
+
+    <div class="form-group">
+        <label for="contents">초기화</label>
+        <button type="button" class="btn-submit w-auto" onclick="resetPassword({{ $user->id }})">비밀번호 초기화</button>
+    </div>
+
+    <button type="submit" class="btn-submit">수정</button>
     <br/>
     <button type="button" class="btn-list" id="listAct">목록</button>
 </form>
@@ -136,29 +130,25 @@
 </div>
 <script>
 
-    function showAct(id) {
-        location.href = "/boards/"+id;
-    }
-
     $("#listAct").click(function() {
-        location.href = "/boards"
+        location.href = "/admins"
     })
+   
+   function resetPassword(id) {
+        if (!confirm('해당 계정의 비밀번호를 초기화하시겠습니까?')) return;
 
-    function imgDelete(fileId) {
-        if (!confirm('정말 삭제하시겠습니까?')) return;
         $.ajax({
-            url: '/files/' + fileId,   // 파일 삭제 라우트 URL
-            type: 'DELETE',
+            url: '/admins/resetPassword/' + id,
+            type: 'PUT',
             data: {
-                _token: '{{ csrf_token() }}' // CSRF 토큰 필수
+                _token: '{{ csrf_token() }}'
             },
             success: function(response) {
-                alert('파일이 삭제되었습니다.');
-                $('.file-view').remove(); // 화면에서 파일 항목 제거
-                $("#fileAfterId").val('');
+                alert(response.message);
+                location.href = "/admins";
             },
             error: function(xhr) {
-                alert('삭제 중 오류가 발생했습니다.');
+                alert('비밀번호 초기화 중 오류가 발생했습니다.');
             }
         });
     }
