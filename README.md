@@ -19,7 +19,7 @@
     &nbsp;&nbsp;2.3 게시글 수정(게시글 수정 및, 파일업로드 및 삭제) <br>
 </p>
 <p>
-    <img src="./img/1.main.png" width="600" height="350" />
+    <img src="./img/1.main.png" width="800" height="350" />
 </p>
     
     
